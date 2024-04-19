@@ -14,8 +14,8 @@ const OurServices = ({ref}) => {
     <div className='flex justify-center items-center w-full bg-[#EEF8FF] py-[15px]' id='Services' >
         <div className='flex flex-col justify-between items-center w-[80%] py-[100px] mobile:py-[50px] tablet:py-[50px]'>
             <div className='flex flex-col justify-start items-start mb-[50px] mobile:mb-[20px] tablet:mb-[30px] '>
-                <div className='flex flex-col text-[58px] justify-center items-center text-center mb-[10px] w-[600px] font-bold mobile:w-full tablet:w-full'>
-                    <div className='text-[18px] font-normal text-center text-[#333]'>Our Popular Services</div>
+                <div className='flex flex-col text-[58px] justify-center items-center text-center mb-[10px] w-[600px] font-medium mobile:w-full tablet:w-full'>
+                    <div className='text-[20px] font-bold text-center text-[#333]'>Our Popular Services</div>
                     <div className='text-[#032B56] leading-none mobile:text-[24px] tablet:text-[32px] '>Our Success Cleaning
                     Up your Mess</div>
                 </div>

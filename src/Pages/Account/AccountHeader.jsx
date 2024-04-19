@@ -18,7 +18,7 @@ const AccountHeader = () => {
                         <button className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 duration-700">All categories </button>
                         
                         <div className="relative w-full">
-                            <input type="search" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 outline-none" placeholder="What service are you looking for?" />
+                            <input type="search" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 outline-none" placeholder="What job are you looking for?" />
                             <button type="submit" className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-[#032B56] rounded-e-lg border border-[#032B56] hover:bg-[#4291FD] hover:border-[#4291FD] duration-700 ">
                                 <CgSearch className='text-[20px]' />
                             </button>
@@ -27,12 +27,12 @@ const AccountHeader = () => {
                 </form>
             </div>
             <div className=' flex justify-end items-center gap-[15px] w-[15%] min-[320px]:collapse sm:collapse md:collapse lg:visible font-medium '>
-                <div className='cursor-pointer hover:text-[#4291fd]'>Orders</div>
+                <div className='cursor-pointer hover:text-[#4291fd]'>Jobs</div>
                 <CgBell className='text-[24px] cursor-pointer hover:text-[#4291fd]' />
-                <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' />
+                {/* <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' /> */}
                 <Link to='/Profile'><CgProfile className='text-[24px] cursor-pointer hover:text-[#4291fd]' /></Link>
             </div>
-            <div className='lg:collapse sm:visible sm:text-[15px] md:visible md:text-[15px] min-[320px]:visible'><RxHamburgerMenu className='text-[25px] text-[#4291FD] min-[320px]:text-[16px]' /></div>
+            <RxHamburgerMenu className='text-[25px] text-black desktop:collapse tv:collapse mobile:visible mobile:text-[15px] tablet:visible tablet:text-[15px] laptop:collapse laptop:text-[15px]' />
            
         </div>
     </div>

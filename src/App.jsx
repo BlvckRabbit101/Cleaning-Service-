@@ -15,13 +15,7 @@ import Forgotpss from './Pages/Forgotpss/Forgotpss'
 import Account from './Pages/Account/Account'
 import Profile from './Pages/Profile/Profile'
 import Admin from './Pages/Admin/Admin'
-import AdminOrders from './Pages/Admin/AdminOrders'
-import AdminCleaners from './Pages/Admin/AdminCleaners'
-import AdminCustomers from './Pages/Admin/AdminCustomers'
-import AdminJobs from './Pages/Admin/AdminJobs'
-import AdminMessages from './Pages/Admin/AdminMessages'
-import AdminSettings from './Pages/Admin/AdminSettings'
-import AdminSupport from './Pages/Admin/AdminSupport'
+
 
 
 const App = () => {
@@ -35,14 +29,9 @@ const App = () => {
         <Route path="/Forgotpss" element={<Forgotpss />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/AdminOrders" element={<AdminOrders />} />
-        <Route path="/AdminCleaners" element={<AdminCleaners />} />
-        <Route path="/AdminCustomers" element={<AdminCustomers />} />
-        <Route path="/AdminJobs" element={<AdminJobs />} />
-        <Route path="/AdminMessages" element={<AdminMessages />} />
-        <Route path="/AdminSettings" element={<AdminSettings />} />
-        <Route path="/AdminSupport" element={<AdminSupport />} />
+        <Route path="/Admin/*" element={<Admin />} />
+        
+        
       </Routes>
       
     </BrowserRouter>

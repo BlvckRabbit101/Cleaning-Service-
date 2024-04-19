@@ -7,7 +7,7 @@ const recentOrderData = [
 		product_id: '4324',
 		customer_id: '23143',
 		customer_name: 'Shirley A. Lape',
-		order_date: '2022-05-17T03:24:00',
+		order_date: '2022-05-17',
 		order_total: '$435.50',
 		current_order_status: 'PLACED',
 		shipment_address: 'Cottage Grove, OR 97424'
@@ -17,7 +17,7 @@ const recentOrderData = [
 		product_id: '7453',
 		customer_id: '96453',
 		customer_name: 'Ryan Carroll',
-		order_date: '2022-05-14T05:24:00',
+		order_date: '2022-05-14',
 		order_total: '$96.35',
 		current_order_status: 'CONFIRMED',
 		shipment_address: 'Los Angeles, CA 90017'
@@ -27,7 +27,7 @@ const recentOrderData = [
 		product_id: '5434',
 		customer_id: '65345',
 		customer_name: 'Mason Nash',
-		order_date: '2022-05-17T07:14:00',
+		order_date: '2022-05-17',
 		order_total: '$836.44',
 		current_order_status: 'SHIPPED',
 		shipment_address: 'Westminster, CA 92683'
@@ -37,7 +37,7 @@ const recentOrderData = [
 		product_id: '9854',
 		customer_id: '87832',
 		customer_name: 'Luke Parkin',
-		order_date: '2022-05-16T12:40:00',
+		order_date: '2022-05-16',
 		order_total: '$334.50',
 		current_order_status: 'SHIPPED',
 		shipment_address: 'San Mateo, CA 94403'
@@ -47,7 +47,7 @@ const recentOrderData = [
 		product_id: '8763',
 		customer_id: '09832',
 		customer_name: 'Anthony Fry',
-		order_date: '2022-05-14T03:24:00',
+		order_date: '2022-05-14',
 		order_total: '$876.00',
 		current_order_status: 'OUT_FOR_DELIVERY',
 		shipment_address: 'San Mateo, CA 94403'
@@ -57,7 +57,7 @@ const recentOrderData = [
 		product_id: '5627',
 		customer_id: '97632',
 		customer_name: 'Ryan Carroll',
-		order_date: '2022-05-14T05:24:00',
+		order_date: '2022-05-14',
 		order_total: '$96.35',
 		current_order_status: 'DELIVERED',
 		shipment_address: 'Los Angeles, CA 90017'
@@ -67,42 +67,58 @@ const recentOrderData = [
 
 function RecentOrders () {
   return (
-    <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
-			<strong className="text-gray-700 font-medium">Recent Orders</strong>
-			<div className="border-x border-gray-200 rounded-sm mt-3">
-				<table className="w-full text-gray-700 outline-none">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Product ID</th>
-							<th>Customer Name</th>
-							<th>Order Date</th>
-							<th>Order Total</th>
-							<th>Shipping Address</th>
-							<th>Order Status</th>
-						</tr>
-					</thead>
-					<tbody className='outline-none border-none'>
-						{recentOrderData.map((order) => (
-							<tr key={order.id} >
-								<td>
-									<Link to={`/AdminOrders/${order.id}`}>#{order.id}</Link>
-								</td>
-								<td>
-									<Link to={`/AdminCleaner/${order.product_id}`}>#{order.product_id}</Link>
-								</td>
-								<td>
-									<Link to={`/AdminCustomer/${order.customer_id}`}>{order.customer_name}</Link>
-								</td>
-								<td>15-04-2024</td>
-								<td>{order.order_total}</td>
-								<td>{order.shipment_address}</td>
-								<td>Pending</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
+    <div className="bg-white  pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
+			<div className="text-gray-700 font-medium px-4">Recent Orders</div>
+			<div class="flex flex-col text-center">
+                <div >
+                    <div class="pt-2">
+                    <div>
+                        <table class="min-w-full">
+                        <thead class="bg-white border-b">
+                            <tr>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
+                                Product ID
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
+                                Customer Name
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
+                                Order Date
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
+                                Order Total
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
+                                Order Status
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {recentOrderData.map((order) => (
+                                <tr className="border-b" key={order.id}>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        <Link to={`/AdminOrders/${order.product_id}`}>#{order.product_id}</Link>
+                                    </td>
+                                    <td>
+                                        <Link to={`/AdminCleaner/${order.customer_name}`}>{order.customer_name}</Link>
+                                    </td>
+                                    <td>
+                                        <Link to={`/AdminCustomer/${order.order_date}`}>{order.order_date}</Link>
+                                    </td>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        {order.order_total}
+                                    </td>
+                                    <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                                        Pending
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
 		</div>
   )
 }

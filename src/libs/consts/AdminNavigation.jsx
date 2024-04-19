@@ -19,31 +19,31 @@ export const ADMIN_SIDEBAR_LINKS = [
 	{
 		key: 'AdminOrders',
 		label: 'Orders',
-		path: '/AdminOrders',
+		path: '/Admin/AdminOrders',
 		icon: <HiOutlineShoppingCart />
 	},
     {
 		key: 'AdminCleaners',
 		label: 'Cleaners',
-		path: '/AdminCleaners',
+		path: '/Admin/AdminCleaners',
 		icon: <HiOutlineCube />
 	},
 	{
-		key: 'AdminCustomers',
-		label: 'Customers',
-		path: '/AdminCustomers',
+		key: 'AdminClients',
+		label: 'Clients',
+		path: '/Admin/AdminClients',
 		icon: <HiOutlineUsers />
 	},
 	{
 		key: 'AdminJobs',
 		label: 'Jobs',
-		path: '/AdminJobs',
+		path: '/Admin/AdminJobs',
 		icon: <HiOutlineDocumentText />
 	},
 	{
 		key: 'AdminMessages',
 		label: 'Messages',
-		path: '/AdminMessages',
+		path: '/Admin/AdminMessages',
 		icon: <HiOutlineAnnotation />
 	}
 ]
@@ -52,13 +52,13 @@ export const ADMIN_SIDEBAR_BOTTOM_LINKS = [
 	{
 		key: 'AdminSettings',
 		label: 'Settings',
-		path: '/AdminSettings',
+		path: '/Admin/AdminSettings',
 		icon: <HiOutlineCog />
 	},
 	{
 		key: 'AdminSupport',
 		label: 'Help & Support',
-		path: '/AdminSupport',
+		path: '/Admin/AdminSupport',
 		icon: <HiOutlineQuestionMarkCircle />
 	}
 ]
