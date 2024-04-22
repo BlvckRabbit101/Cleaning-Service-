@@ -42,7 +42,7 @@ const ClientData = [
 
 function OurClients() {
   return (
-    <div className='bg-white pb-4 rounded-sm border-none  w-[16.1rem]'>
+    <div className='bg-white pb-4 rounded-sm border-none  w-[16.1rem] mobile:w-full tablet:w-full'>
         {ClientData.map((cleaner) => (
         <div key={cleaner.id} className='mb-[10px] mt-[10px]'>
             <div className='text-md text-gray-700 font-bold'>{cleaner.customer_name}</div>

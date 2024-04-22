@@ -12,7 +12,7 @@ const AddJobs = () => {
                   <div className='font-bold text-[24px]'>Create Jobs</div>
                 </div>
                 <hr className='my-4' />
-                <div className='flex w-full'>
+                <div className='flex w-full mobile:flex-col tablet:flex-col '>
                   <div className='flex-1 w-[35%] '>
                     <div className='font-medium text-[18px]'>Post Jobs</div>
                     <div className='font-normal text-[16px] text-gray-500'>This is where you add a Job to the client feed </div>

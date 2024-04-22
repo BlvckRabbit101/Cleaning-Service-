@@ -38,7 +38,7 @@ const Header = () => {
                 {/* <NavLink to='/Signup'><Button title='Sign Up' /></NavLink> */}
                 
             </div>
-            <RxHamburgerMenu className='text-[25px] text-black desktop:collapse tv:collapse mobile:visible mobile:text-[15px] tablet:visible tablet:text-[15px] laptop:collapse laptop:text-[15px]' />
+            <RxHamburgerMenu className='text-[25px] text-[#032B56] hidden mobile:text-[25px] mobile:block tablet:text-[25px] tablet:block' />
            
         </div>
     </div>

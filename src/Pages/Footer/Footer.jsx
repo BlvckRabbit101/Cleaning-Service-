@@ -9,15 +9,15 @@ import Logo from '../../assets/images/FootLogo.png'
 const Footer = () => {
   return (
     <div className='flex justify-center items-center w-full bg-[#032B56] py-[15px]' id='Footer'>
-        <div className='flex justify-center items-center w-[80%] mobile:flex-col tablet:flex-col'>
+        <div className='flex justify-center items-center w-[80%] mobile:flex-col tablet:flex-col '>
             <div className='flex flex-col justify-center items-center w-full text-[white]'>
-                <div className='flex justify-between items-start text-[16px] pt-[50px] w-full font-medium  mobile:flex-col mobile:justify-start mobile:text-center mobile tablet:flex-col tablet:justify-start tablet:text-center tablet:gap-[30px]'>
-                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full mobile:items-center tablet:w-full tablet:items-center mobile:h-auto tablet:h-auto'>
+                <div className='flex justify-between items-start text-[16px] pt-[50px] w-full font-medium  mobile:flex-col mobile:justify-start mobile:text-left mobile:gap-[40px]  tablet:flex-col tablet:justify-start tablet:text-center tablet:gap-[50px]'>
+                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full mobile:items-start tablet:w-full tablet:items-start mobile:h-auto tablet:h-auto'>
                         <div className='mb-[20px] mobile:mb-[5px]  tablet:mb-[5px]'>
                             {/* <Link to='/'><img className='cursor-pointer w-[200px] h-[100px] object-contain' src={Logo} alt="" /></Link> */}
                             <div className='text-[32px]'>CLEANX</div>
                         </div>
-                        <div className='flex flex-col justify-start items-start gap-[10px] mobile:items-center tablet:items-center'>
+                        <div className='flex flex-col justify-start items-start gap-[10px] '>
                             <div className='text-[22px] '>(090) 2267 - 6859</div>
                             <div className='flex justify-start items-start text-[16px]  font-medium gap-[10px]'>
                                 <IoMailOpenOutline className='text-[20px]' />
@@ -27,7 +27,7 @@ const Footer = () => {
                                 <IoLocationOutline className='text-[35px]' />
                                 <div>25/B Globe House Ave. Point Beach, New York</div>
                             </div>
-                            <div className='flex justify-center items-center gap-[15px]'>
+                            <div className='flex justify-center items-center mobile:items-start tablet:items-start gap-[15px]'>
                             <div className='border-[1px] border-solid border-white p-2 rounded-full hover:bg-[#4291FD] hover:border-[#4291FD] hover:text-[#032B56] cursor-pointer hover:translate-y-[-10px] duration-[700ms]'><FaFacebookF  /></div>
                             <div className='border-[1px] border-solid border-white p-2 rounded-full hover:bg-[#4291FD] hover:border-[#4291FD] hover:text-[#032B56] cursor-pointer hover:translate-y-[-10px] duration-[700ms]'><FaTwitter /></div>
                             <div className='border-[1px] border-solid border-white p-2 rounded-full hover:bg-[#4291FD] hover:border-[#4291FD] hover:text-[#032B56] cursor-pointer hover:translate-y-[-10px] duration-[700ms]'><FaInstagram /></div>
@@ -35,7 +35,7 @@ const Footer = () => {
                         </div>
                         </div>
                     </div>
-                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full mobile:items-center tablet:w-full tablet:items-center mobile:h-auto tablet:h-auto'>
+                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full tablet:w-full mobile:h-auto tablet:h-auto'>
                         <FooterTitle title='Quick Links' />
                         <div className='flex flex-col justify-start items-start gap-[10px]'>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
@@ -61,7 +61,7 @@ const Footer = () => {
                         </div>
                     </div>
                     
-                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full mobile:items-center tablet:w-full tablet:items-center mobile:h-auto tablet:h-auto'>
+                    <div className='w-[200px] h-[330px] flex flex-col justify-start items-start mobile:w-full  tablet:w-full mobile:h-auto tablet:h-auto'>
                         <FooterTitle title='Our Services' />
                         <div className='flex flex-col justify-start items-start gap-[10px]'>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
@@ -86,7 +86,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-[250px] h-[330px] flex flex-col justify-start items-start mobile:w-full mobile:items-center tablet:w-full tablet:items-center mobile:h-auto tablet:h-auto'>
+                    <div className='w-[250px] h-[330px] flex flex-col justify-start items-start mobile:w-full  tablet:w-full mobile:h-auto tablet:h-auto'>
                         <FooterTitle title='Newsletter' />
                         <div className='mb-[15px] text-[16px] text-white'>
                             <div>Subscribe our newsletter to get our latest update & news</div>

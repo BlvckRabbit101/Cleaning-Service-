@@ -5,7 +5,7 @@ import support from '../../../assets/images/support.jpg'
 
 const Contact = () => {
   return (
-    <div className='flex justify-center items-center w-full bg-white pb-[100px] mobile:pb-[50px] tablet:pb-[50px]' id='Contact'>
+    <div className='flex justify-center items-center w-full bg-white py-[50px] mobile:pb-[50px] tablet:pb-[50px]' id='Contact'>
         <div className='flex justify-center items-center w-[80%] text-white font-normal text-[16px] '>
            <div className='bg-[#032B56] w-[100%] rounded-lg p-[50px] flex justify-center items-start gap-[30px] mobile:px-[20px] mobile:py-[40px] mobile:flex-col mobile:items-center mobile:justify-start mobile:text-center tablet:px-[40px] tablet:py-[50px] tablet:flex-col tablet:items-center tablet:justify-start tablet:text-center'>
                 <div className='w-[30%] flex flex-col justify-start items-center gap-[40px] mobile:w-full mobile:gap-[30px] tablet:w-full tablet:gap-[30px]'>

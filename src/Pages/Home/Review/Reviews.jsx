@@ -7,7 +7,7 @@ import Prof from '../../../assets/images/Professor.jpeg'
 const Reviews = () => {
   return (
     <div className='flex justify-center items-center w-full bg-white py-[15px]' id='Reviews'>
-        <div className='flex flex-col justify-start items-center w-[80%] font-[16px] py-[100px] mobile:py-[50px] tablet:py-[50px]'>
+        <div className='flex flex-col justify-start items-center w-[80%] font-[16px] py-[50px] mobile:py-[50px] tablet:py-[50px]'>
             <div className='flex flex-col text-[32px] justify-start items-center text-center mb-[50px] w-[600px] font-medium gap-[15px] mobile:text-[24px] mobile:w-full tablet:w-full'>
                 <div className='text-[18px] font-bold text-center text-[#333]'>TESTEMONIALS</div>
                 <div className='text-[#032B56] leading-none'>What Our Clients say about us</div>

@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 import { HiOutlineLogout } from 'react-icons/hi'
 
 
-export default function AdminSidebar() {
+export default function AdminSidebar({hide,show}) {
   return (
-    <div className='bg-[#032B56] w-60 p-3 flex flex-col text-white h-screen '>
+    <div className={`bg-[#032B56] w-60 p-3 flex flex-col text-white h-screen mobile:hidden tablet:hidden`}>
         <div className='flex items-center text-[24px] font-bold px-1 py-3 gap-2'>
             <span className='text-neutral-100 text-2xl'>CleanX</span>
             <GiVacuumCleaner />

@@ -42,7 +42,7 @@ const OurCleanersData = [
 
 function OurCleaners() {
   return (
-    <div className='bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 w-[16.1rem]'>
+    <div className='bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 w-[16.1rem] mobile:w-full tablet:w-full'>
         <div className="text-gray-700 font-medium">New Cleaners</div>
         {OurCleanersData.map((cleaner) => (
         <div key={cleaner.id} className='mb-[10px] mt-[10px]'>

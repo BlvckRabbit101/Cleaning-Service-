@@ -14,7 +14,7 @@ const AdminJobs = () => {
                   <Link to='/Admin/AddJobs '><button className='py-2 px-4 bg-white border rounded-md font-medium hover:text-gray-500 hover:border uppercase'>Create Job</button></Link>
                 </div>
                 <hr className='my-4 ' />
-                <div className='flex w-full gap-4'>
+                <div className='flex w-full gap-4 mobile:flex-col tablet:flex-col'>
                   <div className='flex-1 w-full  bg-white p-4 rounded-md'>
                     <div className='font-medium text-[18px]'>Your Jobs</div>
                     <div className='font-normal text-[16px] text-gray-500'>All Available Jobs are displayed here</div>

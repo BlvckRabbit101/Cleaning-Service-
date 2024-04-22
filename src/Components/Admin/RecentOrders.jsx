@@ -67,13 +67,13 @@ const recentOrderData = [
 
 function RecentOrders () {
   return (
-    <div className="bg-white  pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
+    <div className="bg-white  pt-3 pb-4 rounded-sm border border-gray-200 flex-1 mobile:w-full">
 			<div className="text-gray-700 font-medium px-4">Recent Orders</div>
 			<div class="flex flex-col text-center">
                 <div >
                     <div class="pt-2">
                     <div>
-                        <table class="min-w-full">
+                        <table class="min-w-full overflow-x-auto">
                         <thead class="bg-white border-b">
                             <tr>
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">

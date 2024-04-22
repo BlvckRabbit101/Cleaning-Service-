@@ -5,10 +5,10 @@ const PricingCard = (props) => {
   return (
     <div className='w-[340px] flex justify-center items-center rounded bg-white text-[#032B56] tablet:w-[250px] '>
         <div className='p-[30px] w-[450px] flex flex-col justify-center items-center rounded-lg  text-center bg-[#EEF8FF] tablet:w-full'>
-            <img className='w-[70px] h-[70px] object-contain ' src={props.icon} alt="" />
+            <img className='w-[50px] h-[50px] object-contain ' src={props.icon} alt="" />
             <div className='text-[28px] font-bold'>{props.title}</div>
-            <div className='text-[28px] font-bold mb-1'>${props.price}</div>
-            <ul className='flex flex-col justify-center items-start list-disc gap-[7px] text-[#4291FD] mb-4'>
+            <div className='text-[28px] font-bold'>${props.price}</div>
+            <ul className='flex flex-col justify-center items-start list-disc gap-[0px] text-[#4291FD] mb-4'>
                 <li> Professional Cleaner</li>
                 <li>  Kitchen Cleaning</li>
                 <li>  Roof Cleaning</li>

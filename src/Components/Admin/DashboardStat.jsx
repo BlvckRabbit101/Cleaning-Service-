@@ -5,7 +5,7 @@ import { GrUserWorker } from "react-icons/gr";
 
 function DashboardStat () {
   return (
-    <div className='flex gap-4 w-full'>
+    <div className='flex gap-4 w-full mobile:flex-col tablet:flex-col'>
         <BoxWrapper>
             <div className='bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center'>
                 <IoBagHandle className='text-2xl text-white' />

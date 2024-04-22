@@ -5,6 +5,7 @@ import AccountSubHeader from './AccountSubHeader'
 import AccountRecommended from './AccountRecommended'
 import AccountPopular from './AccountPopular'
 import Footer from '../Footer/Footer'
+import AccountJobs from './AccountJobs'
 
 const Account = () => {
   return (
@@ -14,6 +15,7 @@ const Account = () => {
         <AccountSubHeader />
         <AccountRecommended />
         <AccountPopular />
+        <AccountJobs />
         {/* <Footer /> */}
     </div>
   )

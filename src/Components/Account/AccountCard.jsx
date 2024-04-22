@@ -3,7 +3,7 @@ import { IoStarOutline } from "react-icons/io5";
 
 const AccountCard = (props) => {
   return (
-    <div className='flex flex-col justify-start items-start py-[20px] w-[340px] bg-gray-100 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-200 '>
+    <div className='flex flex-col justify-start items-start py-[20px] w-[340px] bg-gray-100 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 cursor-pointer hover:bg-gray-200 '>
         <div className='flex flex-col justify-start items-start w-full px-[20px]'>
             <div className='flex justify-between items-center w-full'>
                 <div>

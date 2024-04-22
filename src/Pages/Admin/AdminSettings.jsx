@@ -8,7 +8,7 @@ const AdminSettings = () => {
         <div className='w-full'>
                 <div className='font-bold text-[24px]'>Settings</div>
                 <hr className='my-4' />
-                <div className='flex w-full'>
+                <div className='flex w-full mobile:flex-col tablet:flex-col'>
                   <div className='flex-1 w-[35%] '>
                     <div className='font-medium text-[18px]'>General Setting</div>
                     <div className='font-normal text-[16px] text-gray-500'>Admin configuration settings</div>

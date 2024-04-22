@@ -15,8 +15,8 @@ import AddJobs from '../../Components/Admin/AddJobs'
 const Admin = () => {
   return (
     <div className='flex bg-neutral-100 w-screen'>
-        <AdminSidebar />
-        <div className='flex-1 '>
+        <AdminSidebar/>
+        <div className='flex-1 mobile:w-full'>
             <AdminHeader />
             <div className='p-4'>
               

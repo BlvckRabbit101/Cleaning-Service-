@@ -4,7 +4,7 @@ import Accountbtn from '../../Components/Account/Accountbtn';
 
 const AccountSubHeader = () => {
   return (
-    <div className='flex justify-center items-center w-full bg-white py-[0px]' >
+    <div className='flex justify-center items-center w-full bg-white py-[0px] mobile:hidden tablet:hidden' >
         <div className='flex justify-start items-center w-[80%]  font-normal text-[16px] '>
            <div className='flex w-full justify-between items-start gap-[30px]'>
                 <div className='flex justify-start items-center gap-[15px] font-medium'>
