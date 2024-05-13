@@ -17,8 +17,8 @@ const AdminOrders = () => {
                     <hr className='mt-4' />
                     <OrderData />
                   </div>
-                  <div className='rounded-md w-[20rem] bg-white p-4'>
-                    <div className='font-medium text-[18px]'>Pending Orders</div>
+                  <div className='rounded-md w-[20rem] bg-white p-4 mobile:w-full tablet:w-full'>
+                    <div className='font-medium text-[18px]'>Completed Orders</div>
                       <OurOrder />
                   </div>
                 </div>

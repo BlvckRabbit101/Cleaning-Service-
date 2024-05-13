@@ -7,8 +7,8 @@ import OurJobs from '../../Components/Admin/OurOrder'
 
 const AdminJobs = () => {
   return (
-    <div className='flex bg-neutral-100 overflow-y-auto'>
-      <div className=' w-full '>
+    <div className='flex bg-neutral-100 overflow-y-auto h-[calc(100vh-100px)]'>
+      <div className=' w-full'>
                 <div className='flex justify-between items-center'>
                   <div className='font-bold text-[24px]'>Jobs</div>
                   <Link to='/Admin/AddJobs '><button className='py-2 px-4 bg-white border rounded-md font-medium hover:text-gray-500 hover:border uppercase'>Create Job</button></Link>
@@ -18,13 +18,13 @@ const AdminJobs = () => {
                   <div className='flex-1 w-full  bg-white p-4 rounded-md'>
                     <div className='font-medium text-[18px]'>Your Jobs</div>
                     <div className='font-normal text-[16px] text-gray-500'>All Available Jobs are displayed here</div>
-                    <hr className='mt-4' />
+                    <hr className='mt-4 ' />
                     <JobData />
                   </div>
-                  <div className='rounded-md w-[20rem] bg-white p-4'>
+                  {/* <div className='rounded-md w-[20rem] bg-white p-4 mobile:w-full tablet:w-full'>
                     <div className='font-medium text-[18px]'>Most Popular Jobs</div>
                     <OurJobs />
-                  </div>
+                  </div> */}
                 </div>
             </div>
     </div>

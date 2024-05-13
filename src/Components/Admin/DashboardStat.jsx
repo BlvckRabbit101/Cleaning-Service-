@@ -1,58 +1,30 @@
-import React from 'react'
 import { IoBagHandle } from 'react-icons/io5'
 import { HiOutlineUserAdd, HiOutlineUsers, HiOutlineDocumentText } from "react-icons/hi";
 import { GrUserWorker } from "react-icons/gr";
+import React, { useEffect, useState } from 'react'
+import axios from "axios";
+import { useParams } from 'react-router-dom'; 
+import DashboardOrders from './DashboardOrders';
+import DashboardUsers from './DashboardUsers';
+import DashboardJobs from './DashboardJobs';
+import DashboardCleaners from './DashboardCleaners';
 
 function DashboardStat () {
+   
+
   return (
     <div className='flex gap-4 w-full mobile:flex-col tablet:flex-col'>
         <BoxWrapper>
-            <div className='bg-sky-500 w-12 h-12 rounded-full flex items-center justify-center'>
-                <IoBagHandle className='text-2xl text-white' />
-            </div>
-            <div className='pl-4'>
-                <div className='text-sm text-gray-500 font-medium'>Total Orders</div>
-                <div className='flex items-center'>
-                    <div className='text-xl text-gray-700 font-semibold'>N300,900</div>
-                    <div className='text-sm text-green-500 pl-2'>+2200</div>
-                </div>
-            </div>
+            <DashboardOrders />
         </BoxWrapper>
         <BoxWrapper>
-            <div className='bg-orange-600 w-12 h-12 rounded-full flex items-center justify-center'>
-                <HiOutlineUsers className='text-2xl text-white' />
-            </div>
-            <div className='pl-4'>
-                <div className='text-sm text-gray-500 font-medium'>Total Users</div>
-                <div className='flex items-center'>
-                    <div className='text-xl text-gray-700 font-semibold'>10,323</div>
-                    <div className='text-sm text-green-500 pl-2'>+220</div>
-                </div>
-            </div>
+            <DashboardUsers />
         </BoxWrapper>
         <BoxWrapper>
-            <div className='bg-yellow-400 w-12 h-12 rounded-full flex items-center justify-center'>
-                <HiOutlineDocumentText className='text-2xl text-white' />
-            </div>
-            <div className='pl-4'>
-                <div className='text-sm text-gray-500 font-medium'>Job Offers</div>
-                <div className='flex items-center'>
-                    <div className='text-xl text-gray-700 font-semibold'>420</div>
-                    <div className='text-sm text-green-500 pl-2'>+18</div>
-                </div>
-            </div>
+            <DashboardJobs />
         </BoxWrapper>
         <BoxWrapper>
-            <div className='bg-green-600 w-12 h-12 rounded-full flex items-center justify-center'>
-                <GrUserWorker className='text-2xl text-white' />
-            </div>
-            <div className='pl-4'>
-                <div className='text-sm text-gray-500 font-medium'>Total Cleaners</div>
-                <div className='flex items-center'>
-                    <div className='text-xl text-gray-700 font-semibold'>323</div>
-                    <div className='text-sm text-green-500 pl-2'>+12</div>
-                </div>
-            </div>
+            <DashboardCleaners />
         </BoxWrapper>
     </div>
   )

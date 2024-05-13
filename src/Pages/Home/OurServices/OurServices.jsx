@@ -21,12 +21,12 @@ const OurServices = ({ref}) => {
                 </div>
             </div>
             <div className='flex flex-wrap gap-[20px]'>
-                <OurServicesCard icon={pot} title='Kitchen Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
-                <OurServicesCard icon={vacuum} title='Carpet Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
-                <OurServicesCard icon={house} title='House Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
-                <OurServicesCard icon={office} title='Office Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
-                <OurServicesCard icon={road} title='Road Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
-                <OurServicesCard icon={windowed} title='Window Cleaning' text='Bras fringilla conubia odios uira metus torquent commodo quam praesent torna pede' />
+                <OurServicesCard icon={pot} title='Kitchen Cleaning' text='Let us tackle grease and grime, leaving your kitchen sparkling and sanitized.' />
+                <OurServicesCard icon={vacuum} title='Carpet Cleaning' text='Revitalize your carpets with our deep-cleaning expertise, removing stains and odors.' />
+                <OurServicesCard icon={house} title='House Cleaning' text='Experience a fresh and tidy home with our comprehensive house cleaning solutions.' />
+                <OurServicesCard icon={office} title='Office Cleaning' text='Maintain a professional workspace with our efficient and detail-oriented office cleaning services.' />
+                <OurServicesCard icon={road} title='Road Cleaning' text='Keep streets pristine and safe with our thorough road cleaning services, enhancing community aesthetics.' />
+                <OurServicesCard icon={windowed} title='Window Cleaning' text=' Enjoy crystal-clear views with our meticulous window cleaning service.' />
             </div>
         </div>
     </div>

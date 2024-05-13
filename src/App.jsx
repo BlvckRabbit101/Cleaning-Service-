@@ -15,6 +15,9 @@ import Forgotpss from './Pages/Forgotpss/Forgotpss'
 import Account from './Pages/Account/Account'
 import Profile from './Pages/Profile/Profile'
 import Admin from './Pages/Admin/Admin'
+import Otp from './Pages/OTP/Pin'
+import privateRoute from './privateRoute'
+import AccountDetail from './Pages/Account/AccountDetail'
 
 
 
@@ -27,11 +30,11 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Forgotpss" element={<Forgotpss />} />
-        <Route path="/Account" element={<Account />} />
+        <Route path="/Account" element={<privateRoute><Account /></privateRoute>} />
+        <Route path="/AccountDetail/:id" element={<AccountDetail/>} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Admin/*" element={<Admin />} />
-        
-        
+        <Route path="/Pin" element={<Otp />} />
       </Routes>
       
     </BrowserRouter>

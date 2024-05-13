@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div>
         <AccountHeader />
-        PROFILE STUFF
+        <div className='font-medium text-lg'>Coming Soon!</div>
     </div>
   )
 }

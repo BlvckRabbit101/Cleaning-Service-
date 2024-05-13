@@ -3,20 +3,20 @@ import AccountHeader from './AccountHeader'
 import AccountHero from './AccountHero'
 import AccountSubHeader from './AccountSubHeader'
 import AccountRecommended from './AccountRecommended'
-import AccountPopular from './AccountPopular'
-import Footer from '../Footer/Footer'
+import AccountPopular from './AccountSimilar'
 import AccountJobs from './AccountJobs'
+import AccountFooter from './AccountFooter'
 
 const Account = () => {
   return (
     <div>
         <AccountHeader />
-        <AccountHero />
+        {/* <AccountHero /> */}
         <AccountSubHeader />
-        <AccountRecommended />
-        <AccountPopular />
+        {/* <AccountRecommended /> */}
+        {/* <AccountPopular /> */}
         <AccountJobs />
-        {/* <Footer /> */}
+        <AccountFooter />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhoneAlt  } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -18,15 +19,15 @@ const Banner = () => {
             <div className=' flex justify-center items-center gap-[20px]'>
                 <div className='flex justify-center items-center gap-[10px]'>
                     <div><FaPhoneAlt className='w-[25px] h-[25px] text-[#4291FD]' /></div>
-                    <div className='cursor-pointer hover:text-[#4291FD] duration-[700ms] font-medium'>
-                        +234 8376 6284
-                    </div>
+                    <Link to='https://www.whatsapp.com/'><div className='cursor-pointer hover:text-[#4291FD] duration-[700ms] font-medium'>
+                        070 3710 2658
+                    </div></Link>
                 </div>
                 <div className='flex justify-center items-center gap-[10px]'>
                     <div ><IoMailSharp className='w-[25px] h-[25px] text-[#4291FD]' /></div>
-                    <div className='cursor-pointer hover:text-[#4291FD] duration-[700ms] font-medium'>
+                    <Link to=''><div className='cursor-pointer hover:text-[#4291FD] duration-[700ms] font-medium'>
                         Info@cleaning.com
-                    </div>
+                    </div></Link>
                 </div>
             </div>
         </div>

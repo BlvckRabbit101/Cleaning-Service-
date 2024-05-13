@@ -11,6 +11,8 @@ import AdminMessages from '../../Pages/Admin/AdminMessages'
 import AdminSettings from '../../Pages/Admin/AdminSettings'
 import AdminSupport from '../../Pages/Admin/AdminSupport'
 import AddJobs from '../../Components/Admin/AddJobs'
+import AddClients from '../../Components/Admin/AddClients'
+
 
 const Admin = () => {
   return (
@@ -30,6 +32,8 @@ const Admin = () => {
               <Route path="/AdminSettings" element={<AdminSettings />} />
               <Route path="/AdminSupport" element={<AdminSupport />} />
               <Route path="/AddJobs" element={<AddJobs />} />
+              <Route path="/AddClients" element={<AddClients />} />
+              
             </Routes>
             </div>
         </div>
