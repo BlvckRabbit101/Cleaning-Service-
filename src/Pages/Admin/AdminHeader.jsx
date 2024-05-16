@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { HiOutlineSearch, HiOutlineChatAlt, HiOutlineBell } from 'react-icons/hi'
-import profileimg from '../../assets/images/profileImg.jpg'
+import profileimg from '../../assets/images/Professor.jpeg'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -98,7 +98,7 @@ export default function AdminHeader () {
             </div>
             
             <div>
-                <Link to='/Admin/AdminSettings'><img src={profileimg} alt="" className='rounded-full h-10 w-10 cursor-pointer' /></Link>
+                <Link to='/Admin/AdminSettings'><img src={profileimg} alt="" className='rounded-full ring-2 h-10 w-10 cursor-pointer' /></Link>
             </div>
         </div>
     </div>

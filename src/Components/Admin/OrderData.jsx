@@ -29,7 +29,7 @@ const OrderData = () => {
     
     await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/job/update/${id}/`, {status: 'complete'}).then((res) => {
         console.log(res)
-        setData(res.data.data)
+        // setData(res.data.data)
     }).catch((error) => {
         console.log(error)
     })

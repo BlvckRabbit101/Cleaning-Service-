@@ -30,6 +30,7 @@ const AccountHeader = () => {
   
     console.log(data)
     
+   
 
   return (
     <div className='flex justify-center items-center w-full bg-white text-[#032B56] py-[15px] border-b-[1px] border-b-solid border-b-gray-80 mobile:py-2' >
@@ -56,11 +57,11 @@ const AccountHeader = () => {
                 <div className='cursor-pointer hover:text-[#4291fd]'>Welcome, {data?.companyName} 🎉</div>
                 {/* <div className='cursor-pointer hover:text-[#4291fd]'>Jobs</div> */}
                 <div className='relative'>
-                    {/* <CgBell className='text-[24px] cursor-pointer hover:text-[#4291fd]' /> */}
-                    {/* <div className='rounded-full bg-red-600 w-2 h-2 top-0 right-0 absolute'></div> */}
+                    <CgBell className='text-[24px] cursor-pointer hover:text-[#4291fd]' />
+                    <div className='rounded-full bg-red-600 w-2 h-2 top-0 right-0 absolute'></div>
                 </div>
                 
-                <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' />
+                {/* <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' /> */}
                 <Link to='/Profile'><CgProfile className='text-[24px] cursor-pointer hover:text-[#4291fd]' /></Link>
             </div>
             <RxHamburgerMenu className='text-[25px] text-[#032B56] hidden mobile:text-[25px] mobile:block tablet:text-[25px] tablet:block' />
