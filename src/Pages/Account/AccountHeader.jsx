@@ -6,6 +6,7 @@ import Logo from '../../assets/images/Logo.png'
 import { Link } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgProfile, CgBell, CgHeart, CgSearch  } from "react-icons/cg";
+import AccountNotification from '../../Components/Account/AccountNotification';
 
 const AccountHeader = () => {
 
@@ -57,8 +58,7 @@ const AccountHeader = () => {
                 <div className='cursor-pointer hover:text-[#4291fd]'>Welcome, {data?.companyName} 🎉</div>
                 {/* <div className='cursor-pointer hover:text-[#4291fd]'>Jobs</div> */}
                 <div className='relative'>
-                    <CgBell className='text-[24px] cursor-pointer hover:text-[#4291fd]' />
-                    <div className='rounded-full bg-red-600 w-2 h-2 top-0 right-0 absolute'></div>
+                    <AccountNotification />
                 </div>
                 
                 {/* <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' /> */}
