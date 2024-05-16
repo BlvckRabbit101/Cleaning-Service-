@@ -18,7 +18,12 @@ import Admin from './Pages/Admin/Admin'
 import Otp from './Pages/OTP/Pin'
 import privateRoute from './privateRoute'
 import AccountDetail from './Pages/Account/AccountDetail'
-
+import AccountComingSoon from './Pages/Account/AccountComingSoon'
+import ComingSoon from './Pages/Home/ComingSoon'
+import AccountVerification from './Pages/Account/AccountVerification'
+import AccountVerified from './Pages/Account/AccountVerified'
+import AccountNotVerified from './Pages/Account/AccountNotVerified'
+import AccountVerifying from './Pages/Account/AccountVerifying'
 
 
 const App = () => {
@@ -35,6 +40,12 @@ const App = () => {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Admin/*" element={<Admin />} />
         <Route path="/Pin" element={<Otp />} />
+        <Route path="/AccountComingSoon" element={<AccountComingSoon />} />
+        <Route path="/ComingSoon" element={<ComingSoon />} />
+        <Route path="/AccountVerification" element={<AccountVerification />} />
+        <Route path="/AccountVerified" element={<AccountVerified />} />
+        <Route path="/AccountNotVerified" element={<AccountNotVerified />} />
+        <Route path="/AccountVerifying" element={<AccountVerifying />} />
       </Routes>
       
     </BrowserRouter>

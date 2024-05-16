@@ -46,7 +46,7 @@ const CleanersData = () => {
                                 Phone No
                             </th>
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 ">
-                                Jobs Completed
+                                Verify
                             </th>
                             </tr>
                         </thead>
@@ -65,9 +65,9 @@ const CleanersData = () => {
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {props.phoneNo}
                                     </td>
-                                    <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-                                        0 Jobs
-                                    </td>
+                                    <td>
+									    <input type="checkbox" />
+								    </td>
                                 </tr>
                             ))}
                         </tbody>

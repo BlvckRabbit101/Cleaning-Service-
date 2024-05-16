@@ -4,6 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoMailOpenOutline, IoLocationOutline } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaInstagram, FaGoogle  } from "react-icons/fa";
 import Logo from '../../assets/images/FootLogo.png'
+import { Link } from 'react-router-dom';
 
 const AccountFooter = () => {
   return (
@@ -39,23 +40,23 @@ const AccountFooter = () => {
                         <div className='flex flex-col justify-start items-start gap-[10px]'>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>About Us</div>
+                                <Link to='/AccountComingSoon'><div>About Us</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Our Team</div>
+                                <Link to='/AccountComingSoon'><div>Our Team</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>How it Works</div>
+                                <Link to='/AccountComingSoon'><div>How it Works</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Newsletter</div>
+                                <Link to='/AccountComingSoon'><div>Newsletter</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Contact Us</div>
+                                <Link to='/AccountComingSoon'><div>Contact Us</div></Link>
                             </div>
                         </div>
                     </div>
@@ -65,23 +66,23 @@ const AccountFooter = () => {
                         <div className='flex flex-col justify-start items-start gap-[10px]'>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Carpet Cleaning</div>
+                                <Link to='/AccountComingSoon'><div>Carpet Cleaning</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Plumbing Services</div>
+                                 <Link to='/AccountComingSoon'><div>Plumbing Services</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Park Cleaning</div>
+                                 <Link to='/AccountComingSoon'><div>Park Cleaning</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Residential Services</div>
+                                 <Link to='/AccountComingSoon'><div>Residential Services</div></Link>
                             </div>
                             <div className='flex justify-center items-center text-[16px] hover:text-[#4291FD] hover:translate-x-[10px] cursor-pointer duration-700'>
                                 <MdKeyboardArrowRight className='text-[30px]' />
-                                <div>Toilet Cleaning</div>
+                                 <Link to='/AccountComingSoon'><div>Toilet Cleaning</div></Link>
                             </div>
                         </div>
                     </div>
