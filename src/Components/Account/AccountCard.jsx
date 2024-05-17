@@ -29,7 +29,6 @@ const AccountCard = (props) => {
                   <p>{props.jobDescription}</p>
                 </div>
         </div>
-        <button className="mt-4 text-xl w-full text-white font-medium bg-[#4291FD] py-2 rounded-xl shadow-lg">Book Job</button>
         </Link>
         </div>
     </>
