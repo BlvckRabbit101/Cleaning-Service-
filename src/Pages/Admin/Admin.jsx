@@ -34,6 +34,7 @@ const Admin = () => {
               <Route path="/AddJobs" element={<AddJobs />} />
               <Route path="/AddClients" element={<AddClients />} />
               
+              
             </Routes>
             </div>
         </div>
