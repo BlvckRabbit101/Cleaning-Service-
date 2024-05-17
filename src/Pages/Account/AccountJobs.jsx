@@ -13,7 +13,6 @@ const AccountJobs = ({filteredData}) => {
           { filteredData?.map((props) => (
             <div key={props._id}><AccountCard price={ props.price } jobTitle={ props.jobTitle } jobDate={ props.jobDate } jobLocation={ props.jobLocation } jobDescription={props.jobDescription} jobID={props.jobID}/></div>
                 ))}
-                
            </div>
         </div>
     </div>
