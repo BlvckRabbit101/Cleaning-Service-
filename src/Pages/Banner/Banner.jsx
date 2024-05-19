@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
-    <div className='flex justify-center items-center w-full bg-[#032B56] py-[10px] ' id='Banner'>
+    <div className='flex justify-center items-center w-full bg-[#032B56] py-[10px] mobile:hidden tablet:hidden ' id='Banner'>
         <div className='flex justify-between items-center w-[80%] text-[#FEE023] text-[16px] mobile:flex-col mobile:text-[12px] tablet:flex-col tablet:text-[12px] mobile:gap-[5px] tablet:gap-[5px]  '>
             <div className=' flex justify-center items-center font-medium gap-[20px]  '>
                 <div>FOLLOW US:</div>

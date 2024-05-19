@@ -18,6 +18,10 @@ const AdminCleaners = () => {
                     <hr className='mt-4' />
                     <CleanersData />
                   </div>
+                  <div className='rounded-md w-[20rem] bg-white p-4 mobile:w-full tablet:w-full'>
+                    <div className='font-medium text-[18px]'>Verified Users</div>
+                      <OurCleaner />
+                  </div>
                 </div>
             </div>
     </div>

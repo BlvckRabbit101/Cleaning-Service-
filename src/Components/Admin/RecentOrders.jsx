@@ -27,7 +27,7 @@ const RecentOrders = () => {
   console.log(data)
 
   return (
-    <div className="bg-white  pt-3 pb-4 rounded-sm border border-gray-200 flex-1 mobile:w-full">
+    <div className="bg-white  pt-3 pb-4 rounded-sm border border-gray-200 flex-1 mobile:w-full mobile:overflow-scroll tablet:overflow-scroll">
 			<div className="text-gray-700 font-medium px-4">Recent Orders</div>
 			<div class="flex flex-col text-center">
                 <div >

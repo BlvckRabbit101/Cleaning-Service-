@@ -37,7 +37,7 @@ const AdminNotification = () => {
   return (
     <div onMouseOver={() => setChange(true)} 
     onMouseLeave={() => setChange(false)} className='relative'>
-    <HiOutlineBell className='cursor-pointer duration-300 mobile:hidden tablet:hidden' fontSize="30px" />
+    <HiOutlineBell className='cursor-pointer duration-300 ' fontSize="30px" />
       {ordersLength > 0 ?<div className='rounded-full bg-red-600 w-5 h-5 text-white flex items-center justify-center text-xs top-[-10px] right-[-7px] absolute'>{ordersLength > 9? "9+" : ordersLength}</div> : null}
     <div className={`${change? 'visible' : 'invisible'} duration-150 `}
       onMouseOver={() => setChange('change')} 
