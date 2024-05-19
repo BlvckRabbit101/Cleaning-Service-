@@ -1,31 +1,15 @@
-import React, { useState, useEffect} from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { IoCloseSharp, IoCheckmarkSharp  } from "react-icons/io5";
+import { IoCloseSharp, IoCheckmarkSharp } from "react-icons/io5";
+import {useGetAllUsersQuery} from '../../ReactRedux/UserRTK'
 
 const CleanersData = () => {
 
-    const [data, setData] = useState()
-
-    const getUser = async () => {
     
-    await axios.get('https://cleaning-service-0mh2.onrender.com/api/users').then((res) => {
-      console.log(res)
-      setData(res.data.data)
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
+    const {data: usersData,isLoading} = useGetAllUsersQuery()
 
-  useEffect(()=>{
-    getUser()
-    console.log('hello');
-  },[])
-
-  console.log(data)
-  const newData = data?.slice(0,8)
-  
-  const filteredData = data?.filter((el)=> el.isVerified === !true)
+  const newData = usersData?.data?.slice(0,8)
 
   const verifyUser = async (id) => {
     
@@ -36,8 +20,7 @@ const CleanersData = () => {
         console.log(error)
     })
     }
-
-  console.log(data)
+  if (isLoading) return <h1>Loading...</h1>
 
   return (
     <div className="bg-white rounded-sm border-none border-gray-200 flex-1 mobile:overflow-scroll tablet:overflow-scroll">
@@ -81,7 +64,7 @@ const CleanersData = () => {
                                         {props.isVerified? 'Verified' : 'Not Verified'}
                                     </td>
                                     <td className='flex items-center justify-center gap-4 py-4 text-xl'>
-                                        {!props.isVerified? <IoCloseSharp onClick={()=>!verifyUser(props._id)} className='cursor-pointer hover:text-red-600 text-red-900' />: null }
+                                        {!props.isVerified? <IoCloseSharp onClick={()=>verifyUser(props._id)} className='cursor-pointer hover:text-red-600 text-red-900' />: null }
                                         {!props.isVerified?<IoCheckmarkSharp onClick={()=>verifyUser(props._id)} className='cursor-pointer hover:text-green-600 text-green-800' />: null }
 								    </td>
                                 </tr>

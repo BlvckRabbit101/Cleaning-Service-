@@ -36,6 +36,7 @@ const Login = () => {
                 navigate('/Account')
             }
         }).catch((error)=>{
+            setIsLoading(false)
             console.log(error)
             alert('Incorrect Email or Password...')
         })

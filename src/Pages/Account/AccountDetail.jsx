@@ -7,13 +7,15 @@ import { IoHomeOutline, IoShareSocial, IoInformationCircleOutline  } from "react
 import { HiOutlineDotsHorizontal,HiOutlineCalendar , HiOutlineClock, HiOutlineLocationMarker, HiOutlineFlag   } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import AccountSimilar from './AccountSimilar';
+import { useGetSingleUserQuery } from '../../ReactRedux/UserRTK';
 
 const AccountDetail = () => {
 
     const [change, setChange] = useState(false)
     const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(false)
-    const {id} = useParams()
+  const { id } = useParams()
+    const {data: userData,isLoading: loader, isError,isFetching} = useGetSingleUserQuery({})
 
     const getOneJob = async () => {
     
@@ -33,15 +35,14 @@ const AccountDetail = () => {
     
     const bookJob = async (id) => {
       setIsLoading(true)
-      await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/job/book/${id}/`, {status: 'confirmed'}).then((res) => {
-          console.log(res)
-          setData(res.data.data)
+      await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/job/book/${id}/`, {status: 'booked',user_id: userData?.data?._id}).then((res) => {
+          alert("You've booked this job")
       }).catch((error) => {
           console.log(error)
       })
       }
+  if (loader) return <h1>Loading...</h1>
 
-    console.log(data)
   return (
     <div className='flex-col justify-center items-center w-full'>
       <AccountHeader />
@@ -122,7 +123,7 @@ const AccountDetail = () => {
                       <div>Booking  Location</div>
                     </div>
                   </div>
-                  {data?.isVerified ?  <button disabled={isLoading}  onClick={bookJob} className='mt-4 text-xl w-[90%] text-white font-medium bg-[#4291FD] py-2 rounded-sm mb-4 shadow-lg'>{isLoading? 'Job Booked': 'Book Job'}</button> : null}
+                  {userData?.data?.isVerified || data?.status !== 'open' ?  <button disabled={isLoading}  onClick={()=>bookJob(data?._id)} className='mt-4 text-xl w-[90%] text-white font-medium bg-[#4291FD] py-2 rounded-sm mb-4 shadow-lg'>{isLoading? 'Loading...': 'Book Job'}</button> : null}
                 </div>
               </div>
             </div>
