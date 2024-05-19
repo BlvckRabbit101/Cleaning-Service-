@@ -33,8 +33,8 @@ const AdminMessages = () => {
 
   
   return (
-    <div className='flex bg-neutral-100'>
-        <div className="w-full text-gray-700 rounded">
+    <div className='flex bg-neutral-100 '>
+        <div className="w-full text-gray-700 rounded ">
           <div className="head flex border-none pb-3 rounded-t">
             <div className="title px-2 font-semibold text-lg">Inbox</div>
             
@@ -43,7 +43,7 @@ const AdminMessages = () => {
               <div className="btn p-1 px-2 border-2 cursor-pointer rounded-full font-bold hover:bg-gray-100">...</div>
             </div> */}
           </div>
-        <div className="body border overflow-y-auto h-[calc(90vh-100px)]">
+        <div className="body border overflow-y-auto h-[calc(90vh-100px)] ">
           <div className="messages">
             {newData?.map((props) => (
             <div className="msg px-4 py-4 focus:border-l-2 focus:border-blue-500 flex text-sm shadow-sm text-gray-600 cursor-pointer hover:bg-gray-200">

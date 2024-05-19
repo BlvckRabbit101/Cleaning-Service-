@@ -69,7 +69,7 @@ const AccountSubHeader = ({handleChange}) => {
                     </select>
                 </div>
                 <div>
-                <button className='flex justify-center items-center text-sm font-medium text-center text-gray-900 bg-gray-100 border py-[5px] px-[10px] border-gray-300 rounded-2xl hover:bg-gray-200 duration-700'><RiFilter2Fill className='text-[24px]' /> Filter</button>
+                {/* <button className='flex justify-center items-center text-sm font-medium text-center text-gray-900 bg-gray-100 border py-[5px] px-[10px] border-gray-300 rounded-2xl hover:bg-gray-200 duration-700'><RiFilter2Fill className='text-[24px]' /> Filter</button> */}
                 </div>
            </div>
         </div>

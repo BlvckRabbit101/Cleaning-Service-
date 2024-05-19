@@ -35,7 +35,7 @@ const Pin = () => {
     <div className="bg-gray-100 flex flex-col items-center justify-center h-screen w-full dark:bg-gray-900">
         <div className="w-full max-w-md px-8 py-10 bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-200">
             <h1 className="text-2xl font-semibold text-center mb-6">Enter OTP</h1>
-            <p className="text-gray-600 text-center mb-4">Code sent to +234 123-4567</p>
+            <p className="text-gray-600 text-center mb-4">Code sent to your Email</p>
             <div className="w-full my-2 flex items-center justify-center gap-4">
                 <input type="number" name='otp' className="rounded-lg bg-gray-100 cursor-text text-[24px] text-center dark:bg-gray-800 w-full py-4 flex items-center justify-center" onChange={handleChange} />
             </div>

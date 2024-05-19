@@ -38,7 +38,7 @@ const OrderData = () => {
   console.log(data)
 
   return (
-    <div className="bg-white rounded-sm border-none border-gray-200 flex-1">
+    <div className="bg-white rounded-sm border-none border-gray-200 flex-1 mobile:overflow-scroll tablet:overflow-scroll">
 			<div class="flex flex-col text-center">
                 <div >
                     <div>
