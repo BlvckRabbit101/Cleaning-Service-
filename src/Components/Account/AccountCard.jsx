@@ -4,7 +4,6 @@ import apartA from '../../assets/images/apartment.jpg'
 import PropTypes from 'prop-types'
 
 const AccountCard = (props) => {
-// console.log(props)
   return (
     <>
       <div className='flex flex-col justify-start items-start px-6 pt-6 pb-6 bg-white rounded-xl shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-100 mobile:w-full tablet:w-full'>

@@ -31,9 +31,9 @@ const AccountDetail = () => {
     console.log('hello');
     },[])
     
-    const bookJob = async () => {
+    const bookJob = async (id) => {
       setIsLoading(true)
-      await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/job/update/${data._id}/`, {status: 'confirmed'}).then((res) => {
+      await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/job/book/${id}/`, {status: 'confirmed'}).then((res) => {
           console.log(res)
           setData(res.data.data)
       }).catch((error) => {
@@ -122,7 +122,7 @@ const AccountDetail = () => {
                       <div>Booking  Location</div>
                     </div>
                   </div>
-                  <button disabled={isLoading}  onClick={bookJob} className='mt-4 text-xl w-[90%] text-white font-medium bg-[#4291FD] py-2 rounded-sm mb-4 shadow-lg'>{isLoading? 'Job Booked': 'Book Job'}</button>
+                  {data?.isVerified ?  <button disabled={isLoading}  onClick={bookJob} className='mt-4 text-xl w-[90%] text-white font-medium bg-[#4291FD] py-2 rounded-sm mb-4 shadow-lg'>{isLoading? 'Job Booked': 'Book Job'}</button> : null}
                 </div>
               </div>
             </div>
