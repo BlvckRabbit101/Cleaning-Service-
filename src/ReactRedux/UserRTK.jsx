@@ -1,8 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const userToken = JSON.parse(localStorage.getItem('usertoken'))
+const getToken = () => {
+    const tokenString = localStorage.getItem('usertoken');
+    try {
+        return JSON.parse(tokenString);
+    } catch (e) {
+        console.error("Failed to parse usertoken from localStorage", e);
+        return null;
+    }
+}
 
-const token = userToken.logInUserToken
+const token = getToken()?.logInUserToken
 
 
 export const RtkSlice = createApi({
