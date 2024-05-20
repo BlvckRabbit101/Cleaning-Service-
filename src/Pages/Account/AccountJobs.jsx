@@ -11,7 +11,7 @@ const AccountJobs = ({filteredData}) => {
             <AccountTitle title="Our Jobs" text="These are our currently available Jobs..."/>
             <div className='grid grid-cols-cardGrid gap-[20px] py-[20px] w-full tablet:grid-cols-mediaGrid'>
           { filteredData?.map((props) => (
-            <div key={props._id}><AccountCard price={ props.price } jobTitle={ props.jobTitle } jobDate={ props.jobDate } jobLocation={ props.jobLocation } jobDescription={props.jobDescription} jobID={props.jobID}/></div>
+            <div key={props._id}><AccountCard price={ props.price } jobTitle={ props.jobTitle } jobDate={ props.jobDate } jobLocation={ props.jobLocation } jobDescription={props.jobDescription} jobID={props.jobID} status={props.status}/></div>
                 ))}
            </div>
         </div>

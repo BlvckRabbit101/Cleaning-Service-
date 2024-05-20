@@ -34,6 +34,7 @@ const Account = () => {
     })
   }
   // console.log(values)
+  const myData = result?.filter((el)=> el.status != 'complete')
 
   const filteredData = (data) => {
     let filterBy = data?.filter((el) => !values.category || el.category === values.category)
@@ -46,7 +47,7 @@ const Account = () => {
     return filterBy
   }
   // console.log(filteredData(result))
-  const newData = filteredData(result)
+  const newData = filteredData(myData)
   useEffect(() => {
     fetchData()
   },[values])

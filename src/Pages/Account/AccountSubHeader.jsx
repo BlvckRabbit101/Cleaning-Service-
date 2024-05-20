@@ -8,9 +8,9 @@ const AccountSubHeader = ({handleChange}) => {
 
   return (
     <div className='flex justify-center items-center w-full bg-white py-[0px] mobile:hidden tablet:hidden' >
-        <div className='flex-col justify-center items-start w-[90%] pt-4 font-normal text-[16px] '>
-            <div className=' flex flex-1 justify-start items-center font-[500] text-[16px] gap-[25px] min-[320px]:collapse  sm:collapse md:collapse lg:visible py-4 w-[90%]'>
-                        <form className="w-[700px] mobile:hidden tablet:hidden">
+        <div className='flex-col justify-center items-start w-[90%] font-normal text-[16px] '>
+            <div className=' flex flex-1 justify-start items-center font-[500] text-[16px] gap-[25px] min-[320px]:collapse  sm:collapse md:collapse lg:visible py-2 w-[90%]'>
+                        {/* <form className="w-[700px] mobile:hidden tablet:hidden">
                             <div className="flex" >
                                 <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
                                 <select className="flex-shrink-0 z-10 inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 duration-700 cursor-pointer">
@@ -27,7 +27,7 @@ const AccountSubHeader = ({handleChange}) => {
                                     </button>
                                 </div>
                             </div>
-                        </form> 
+                        </form>  */}
               </div>
            <div className='flex w-full justify-between items-start gap-[30px]'>
               

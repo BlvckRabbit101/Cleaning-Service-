@@ -15,6 +15,9 @@ import AccountVerification from './Pages/Account/AccountVerification'
 import AccountVerified from './Pages/Account/AccountVerified'
 import AccountNotVerified from './Pages/Account/AccountNotVerified'
 import AccountVerifying from './Pages/Account/AccountVerifying'
+import Notification from './Pages/Account/Notification'
+import Wishlist from './Pages/Account/Wishlist'
+import Jobs from './Pages/Account/Jobs'
 
 
 const App = () => {
@@ -37,6 +40,9 @@ const App = () => {
         <Route path="/AccountVerified" element={<AccountVerified />} />
         <Route path="/AccountNotVerified" element={<AccountNotVerified />} />
         <Route path="/AccountVerifying" element={<AccountVerifying />} />
+        <Route path="/Notification" element={<Notification />} />
+        <Route path="/Wishlist" element={<Wishlist />} />
+        <Route path="/Jobs" element={<Jobs />} />
       </Routes>
       
     </BrowserRouter>

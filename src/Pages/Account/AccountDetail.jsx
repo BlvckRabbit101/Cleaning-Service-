@@ -52,7 +52,7 @@ const AccountDetail = () => {
               <Link to='/Account'><IoHomeOutline /></Link>
               <div className='text-gray-500'>/</div>
               <div className='flex-1'>{data?.jobTitle}</div>
-              <button className='flex-col justify-center items-center text-xl font-medium text-center bg-gray-100 border py-[5px] px-[10px] border-gray-300 rounded-lg hover:bg-gray-200 duration-700'><IoShareSocial /></button>
+              {/* <button className='flex-col justify-center items-center text-xl font-medium text-center bg-gray-100 border py-[5px] px-[10px] border-gray-300 rounded-lg hover:bg-gray-200 duration-700'><IoShareSocial /></button>
               <button onClick={() => setChange(true)} 
                 onMouseLeave={() => setChange(false)}  className='flex-col justify-center items-center text-xl font-medium text-center bg-gray-100 border py-[5px] px-[10px] border-gray-300 rounded-lg hover:bg-gray-200 duration-700'><HiOutlineDotsHorizontal />
                 <div className={`${change? 'visible' : 'invisible'} duration-150 `}
@@ -68,7 +68,7 @@ const AccountDetail = () => {
                     </div>
                     
                 </div>
-                </button>
+                </button> */}
             </div>
             <div className='flex justify-center items-start'>
               <div className='flex flex-col justify-start items-start w-[60%] gap-2'>
@@ -78,15 +78,15 @@ const AccountDetail = () => {
                 <div className='text-[18px] font-bold py-2 pr-4 border-b border-t border-graay-400'>Detailed Job Information</div>
                 <div className='flex-col items-start justify-start gap-4 text-[16px]'>
                   <div className='font-bold'>The pay for each Job varies, paying per day, week or month!</div>
-                  <div className='flex gap-2 items-center'>The pay for this Job is <div className='text-lg font-medium'> ₦{data?.price}</div>, Book Now to get more Information</div>
+                  <div className='flex gap-2 items-center'>The pay for this Job is <b> ₦{data?.price}</b>, Book Now to get more Information</div>
                 </div>
                 <div className='flex-col items-start justify-start gap-4 text-[16px]'>
                   <div className='font-bold'>Job Offer Date</div>
-                  <div className='flex gap-2 items-center'>The Client will need this job on <div className='text-lg font-medium'>{data?.jobDate}</div> at <div>{data?.jobTime}</div> Book Now for more Info</div>
+                  <div>The Client will need this job on <b>{data?.jobDate}</b> at <b>{data?.jobTime}</b> Book Now for more Info</div>
                 </div>
                 <div className='flex-col items-start justify-start gap-4 text-[16px]'>
                   <div className='font-bold'>Job Offer Location</div>
-                  <div className='flex gap-2 items-center'>This Job would be taking place at <div className='text-lg font-medium'>{data?.jobLocation}</div>, the exact Location will be sent to you on Booking Confirmation</div>
+                  <div>This Job would be taking place at <b>{data?.jobLocation}</b>, the exact Location will be sent to you on Booking Confirmation</div>
                 </div>
                 <div className='flex-col items-start justify-start gap-4 text-[16px]'>
                   <div className='font-bold'>Job Offer Request</div>

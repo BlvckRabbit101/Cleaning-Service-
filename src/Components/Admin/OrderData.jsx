@@ -15,7 +15,7 @@ const OrderData = () => {
     })
   }
 
-  const filteredData = data?.filter((el)=> el.status === "confirmed")
+  const filteredData = data?.filter((el)=> el.status !== "complete")
 
   console.log(filteredData)
   useEffect(()=>{

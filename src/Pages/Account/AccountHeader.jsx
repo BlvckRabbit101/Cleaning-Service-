@@ -7,10 +7,14 @@ import { Link } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgProfile, CgBell, CgHeart, CgSearch  } from "react-icons/cg";
 import AccountNotification from '../../Components/Account/AccountNotification';
+import Button from '../../Components/Button';
+import { FaTimes } from "react-icons/fa";
 
 const AccountHeader = () => {
 
     const [data, setData] = useState()
+    const [click, setClick] = useState(false)
+    const handleClick = () => setClick(!click)
 
     const userToken = JSON.parse(localStorage.getItem('usertoken'))
     const getUser = async () => {
@@ -31,7 +35,27 @@ const AccountHeader = () => {
   
     console.log(data)
     
-   
+    const content = <>
+    <div className='laptop:hidden desktop:hidden block absolute top-[85px] tablet:top-[100px] w-auto right-0 bg-[#032B56] '>
+      <ul className='text-left text xl p-4 pr-10 text-white'>
+        <li className='py-2 font-medium'>Welcome, {data?.companyName} 🎉</li>
+        <Link to='/Profile' spy={true} smooth={true} >
+          <li className='py-2 font-medium'>Profile</li>
+        </Link>
+        <Link to='/Notification' spy={true} smooth={true} >
+          <li className='py-2 font-medium'>Notifications</li>
+        </Link>
+        <Link to='/Wishlist' spy={true} smooth={true} >
+          <li className='py-2 font-medium'>Wishlist</li>
+        </Link>
+        <Link to='/Jobs' spy={true} smooth={true} >
+          <li className='py-2 font-medium'>Job History</li>
+        </Link>
+        <button className='py-2 font-medium text-yellow-500'>Log Out</button>
+      </ul>
+      
+    </div>
+  </>
 
   return (
     <div className='flex justify-center items-center w-full bg-white text-[#032B56] py-[15px] border-b-[1px] border-b-solid border-b-gray-80 mobile:py-2' >
@@ -54,17 +78,22 @@ const AccountHeader = () => {
                     </div>
                 </form> 
             </div> */}
-            <div className=' flex justify-end items-center gap-[10px] font-medium '>
+            <div className=' flex justify-end items-center gap-[10px] font-medium flex-1'>
                 <div className='cursor-pointer hover:text-[#4291fd] mobile:hidden tablet:hidden'>Welcome, {data?.companyName} 🎉</div>
                 {/* <div className='cursor-pointer hover:text-[#4291fd]'>Jobs</div> */}
-                <div className='relative'>
+                <div className='relative mobile:hidden tablet:hidden'>
                     <AccountNotification />
                 </div>
                 
                 {/* <CgHeart className='text-[24px] cursor-pointer hover:text-[#4291fd]' /> */}
-                <Link to='/Profile'><CgProfile className='text-[24px] cursor-pointer hover:text-[#4291fd]' /></Link>
+                <Link to='/Profile'><CgProfile className='text-[24px] cursor-pointer hover:text-[#4291fd] mobile:hidden tablet:hidden' /></Link>
             </div>
-            {/* <RxHamburgerMenu className='text-[25px] text-[#032B56] hidden mobile:text-[25px] mobile:block tablet:text-[25px] tablet:block' /> */}
+            <div onClick={handleClick} className='text-[25px] text-[#032B56] hidden mobile:text-[25px] mobile:block tablet:text-[25px] tablet:block'>
+            {click? <FaTimes  /> : <RxHamburgerMenu  />}
+        </div>
+        <div>
+              { click && content}
+        </div>
            </div>
     </div>
   )

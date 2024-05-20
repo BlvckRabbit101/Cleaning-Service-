@@ -4,12 +4,13 @@ import apartA from '../../assets/images/apartment.jpg'
 import PropTypes from 'prop-types'
 
 const AccountCard = (props) => {
+  // console.log(props)
   return (
     <>
       <div className='flex flex-col justify-start items-start px-6 pt-6 pb-6 bg-white rounded-xl shadow-lg transform hover:scale-105 transition duration-500 hover:bg-gray-100 mobile:w-full tablet:w-full'>
       <Link to={`/AccountDetail/${props.jobID}`} className='w-full'>
         
-        <h3 className="mb-3 text-xl font-bold text-[#4291FD]">Open</h3>
+        <h3 className="mb-3 text-xl font-bold text-[#4291FD]">{props.status? 'Open' : 'Closed'}</h3>
         <div className="relative">
           <img className="w-full rounded-xl" src={apartA}/>
           <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">₦{props.price}</p>
@@ -41,6 +42,7 @@ AccountCard.propTypes = {
   jobLocation: PropTypes.string.isRequired,
   jobID: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
 }
 
 export default AccountCard

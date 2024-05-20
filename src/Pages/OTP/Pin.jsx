@@ -41,10 +41,10 @@ const Pin = () => {
             </div>
             <div className="flex items-center flex-col justify-between mb-6">
             <p className="text-gray-600 text-sm">Didn't receive code?</p>
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
                 <button className="px-3 py-2 text-sm font-medium text-center rounded text-gray-500 hover:text-[#4291FD] duration-300">Request via Call</button>
                 <button className="px-3 py-2 text-sm font-medium text-center rounded text-gray-500 hover:text-[#4291FD] duration-300">Request Again (00:00:54)</button>
-            </div>
+            </div> */}
             </div>
             <button disabled={isLoading} onClick={onSubmit} className="w-full px-4 py-2 text-lg font-medium text-white bg-[#4291FD] rounded-md hover:bg-blue-700 duration-300">{isLoading? 'Verifying...': 'Verify'}</button>
   </div>
