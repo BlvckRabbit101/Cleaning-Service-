@@ -80,10 +80,10 @@ export default function AdminHeader () {
         <div>
               { click && content}
         </div>
-        <div className='flex items-center justify-start h-10 w-[24rem] border border-gray-300 rounded-sm px-2 mobile:hidden tablet:hidden'>
+        {/* <div className='flex items-center justify-start h-10 w-[24rem] border border-gray-300 rounded-sm px-2 mobile:hidden tablet:hidden'>
             <HiOutlineSearch className='text-gray-400 text-[20px] mr-2 ' />
             <input type="text" name="" id="" placeholder='Search...' className='text-sm outline-none w-full ' />
-        </div>
+        </div> */}
         <div className='flex items-center gap-4 mr-2 text-[#032B56] '>
             <div onMouseOver={() => setChange(true)} 
               onMouseLeave={() => setChange(false)} className='relative'>
