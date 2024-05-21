@@ -4,9 +4,20 @@ import axios from 'axios'
 import { useDispatch } from "react-redux";
 import { loginUser } from '../../ReactRedux/Global';
 import useForm from '../../Handler/useForm'
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+    
+    const [passwordType, setPasswordType] = useState("password");
 
+  const handelToggle = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    } else {
+      setPasswordType("password");
+    }
+  };
+    
     const [values, setValues]= useState({})
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
@@ -14,10 +25,8 @@ const Login = () => {
     const dispatch = useDispatch()
 
     const [formData, setFormData] = useState({
-        username: '',
         email: '',
-        password: '',
-        confirmPassword: ''
+        password: ''
       })
     
       const [errors, setErrors] = useState({})
@@ -51,24 +60,20 @@ const Login = () => {
         }).catch((error)=>{
             setIsLoading(false)
             console.log(error)
-            alert('Incorrect Email or Password...')
+            // alert('Incorrect Email or Password...')
         })
 
         const validationErrors = {}
         if(!formData.email.trim()) {
-            validationErrors.email = "email is required"
+            validationErrors.email = "Email is required"
         } else if(!/\S+@\S+\.\S+/.test(formData.email)){
-            validationErrors.email = "email is not valid"
+            validationErrors.email = "Email is not valid"
         }
 
         if(!formData.password.trim()) {
-            validationErrors.password = "password is required"
+            validationErrors.password = "Password is required"
         } else if(formData.password.length < 6){
-            validationErrors.password = "password should be at least 6 char"
-        }
-
-        if(formData.confirmPassword !== formData.password) {
-            validationErrors.confirmPassword = "password not matched"
+            validationErrors.password = "Password should be at least 6 char"
         }
 
         setErrors(validationErrors)
@@ -96,20 +101,17 @@ const Login = () => {
                     <form className='w-full' onSubmit={handleSubmit} required>
                         <div className="relative z-0 w-full mb-5 group">
                         <input type="email"  onChange={handleChange}  name="email" id="email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#34f6f2] peer" placeholder=" " required />
-                        {errors.email && <div>{errors.email}</div>}  
+                        {errors.email && <div className='text-red-500'>{errors.email}</div>}  
                         <label for="floating_email" className="peer-focus:font-medium absolute t ext-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email Address</label>
                         </div>
-                        <div className="relative z-0 w-full mb-5 group">
-                            <input type="password" onChange={handleChange} name="password" id="password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#34f6f2] peer" placeholder=" " required />
-                            <label for="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-                            {/* <div className='text-red-500' >
-                            {data.error? 'Incorrect Email or Password' : null}
-                            </div> */}
-                            {errors.password && <div>{errors.password}</div>}  
-                            <div className='flex items-center justify-start gap-2 pt-2'>
-                                <input type="checkbox" />
-                                <div>Show Password</div>
-                            </div>
+                        <div className="relative z-0 w-full mb-2 group flex">
+                            <input type={passwordType} onChange={handleChange} name="password" id="password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#34f6f2] peer " placeholder=" " required />
+                            <label for="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ">Password</label>
+                        </div>
+                        {errors.password && <div className='text-red-500'>{errors.password}</div>}  
+                        <div className='flex items-center justify-start gap-2 pb-4'>
+                            <input type="checkbox" onClick={handelToggle} />
+                            <div>Show Password</div>
                         </div>
                         
                         <button onClick={handleSubmit} disabled={isLoading} className="rounded-3xl w-full bg-[#4291FD] hover:bg-transparent border-[2px] border-solid border-[#4291FD] hover:text-[#4291FD] duration-300 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
