@@ -22,8 +22,15 @@ useEffect(()=>{
 },[])
 
 console.log(data)
-const myData = data?.length
+
+const filteredData = data?.filter((el)=> el.isVerified === true)
+const filterData = data?.filter((el)=> el.isVerified === false)
+
+const myData = filteredData?.length
+const notData = filterData?.length
 console.log(myData)
+
+
 
   return (
     <div className='flex'>
@@ -34,7 +41,7 @@ console.log(myData)
                 <div className='text-sm text-gray-500 font-medium'>Total Users</div>
                 <div className='flex items-center'>
                     <div className='text-xl text-gray-700 font-semibold'>{myData}</div>
-                    {/* <div className='text-sm text-green-500 pl-2'>+0</div> */}
+                    <div className='text-sm text-green-500 pl-2'>+{notData}</div>
                 </div>
             </div>
     </div>
