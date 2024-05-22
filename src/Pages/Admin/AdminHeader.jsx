@@ -1,56 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { HiOutlineSearch, HiOutlineChatAlt, HiOutlineBell, HiOutlineLogout } from 'react-icons/hi'
+import { useState } from 'react'
+import { HiOutlineChatAlt, HiOutlineLogout } from 'react-icons/hi'
 import profileimg from '../../assets/images/Professor.jpeg'
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Link, Navigate, useNavigate, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import { Link,useNavigate } from 'react-router-dom';
 import AdminNotification from '../../Components/Admin/AdminNotification';
 import { FaTimes } from "react-icons/fa";
 import { ADMIN_SIDEBAR_LINKS } from '../../libs/consts/AdminNavigation'
 import { ADMIN_SIDEBAR_BOTTOM_LINKS } from '../../libs/consts/AdminNavigation'
+import { useGetAllMessageQuery,useUpdateMessageStatusMutation } from '../../ReactRedux/MessageRTK';
 
 export default function AdminHeader () {
 
+  const navigate = useNavigate()
   const [change, setChange] = useState(false)
-  const [data,setData] = useState()
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
 
-  const navigate = useNavigate()
+  const { data } = useGetAllMessageQuery()
+  const [updateMessageStatus,{data: result}] = useUpdateMessageStatusMutation()
 
-  const getMessage = async () => {
-    
-    await axios.get('https://cleaning-service-0mh2.onrender.com/api/message').then((res) => {
-      console.log(res)
-      setData(res.data.data)
-      // setShowMore(newData.slice(0,20))
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
-
-  const filterMessage = data?.filter((el)=> el.notifyAdmin)
+  const filterMessage = data?.data.filter((el)=> el.notifyAdmin)
   const messageLength = filterMessage?.length
 
-  useEffect(()=>{
-    getMessage()
-    console.log('hello');
-  },[])
+  const updateMessage = (id) => {
+    updateMessageStatus( {id,body:{notifyAdmin: false}} )
+    navigate('/Admin/AdminMessages')
+  }
 
-  
-  const updateMessage = async (id) => {
-    
-    await axios.patch(`https://cleaning-service-0mh2.onrender.com/api/message/update/${id}/`, {notifyAdmin: false}).then((res) => {
-        console.log(res)
-        setData(res.data.data)
-        navigate('/Admin/AdminMessages')
-    }).catch((error) => {
-        console.log(error)
-    })
-    }
-
-  console.log(data)
-
+  console.log(result)
   const content = <>
       <div className='laptop:hidden desktop:hidden absolute top-16 w-[50%] h-full left-0 bg-[#032B56] text-white flex-col justify-between'>
       <div className='flex-1 py-4 flex flex-col gap-0.5 '>
@@ -97,7 +74,7 @@ export default function AdminHeader () {
                   <div className='absolute h-[300px] w-[300px] top-10 right-1 border rounded-md py-4 px-2 flex-col justify-start items-start bg-white overflow-y-scroll font-medium text-red-400'>
                     New Messages
                   {filterMessage?.map((props) => (
-                    <div onClick={()=>updateMessage(props._id)} className='cursor-pointer flex py-2 h-10 hover:bg-gray-100 hover:rounded-sm gap-2 justify-start items-center'>
+                    <div key={ props._id} onClick={()=>updateMessage(props._id)} className='cursor-pointer flex py-2 h-10 hover:bg-gray-100 hover:rounded-sm gap-2 justify-start items-center'>
                       <div className='text-md text-gray-700 font-bold rounded-full h-6 w-6 ring-2 flex items-center justify-center'>{props?.name.charAt(0)}</div>
                       <div className='font-normal text-[16px] text-gray-500'>{props.message.slice(0, 30)}...</div>
                     </div>

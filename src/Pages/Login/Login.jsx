@@ -1,82 +1,52 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useDispatch } from "react-redux";
-import { loginUser } from '../../ReactRedux/Global';
 import useForm from '../../Handler/useForm'
+import Swal from 'sweetalert2'
 
 const Login = () => {
-
-    const [values, setValues]= useState({})
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
 
-    const dispatch = useDispatch()
-
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      })
+    const [showPassword, setShowPassword] = useState(true)
+    const { handleChange, values, errors } = useForm()
     
-      const [errors, setErrors] = useState({})
-
-    const handleChange = (event)=>{
-        const val = event.target.value
-        const name = event.target.name
-
-        setValues({...values,[name]: val,}) 
-        setFormData({
-            ...formData, [name] : value
-        })
+    const handleShwoPassword = () => {
+        setShowPassword(!showPassword)
     }
-
-    console.log(values)
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
         setIsLoading(true)
+        
         await axios.post('https://cleaning-service-0mh2.onrender.com/api/users/signin',values).then((res)=>{
             console.log(res)
             setIsLoading(false)
-            localStorage.setItem('usertoken',JSON.stringify(res.data.data))
+            localStorage.setItem('usertoken', JSON.stringify(res.data.data))
             if(res?.data.data.isAdmin){
+                Swal.fire({
+            title: "Good job!",
+            text: "Admin Login successfully",
+            icon: "success"
+        });
                 navigate('/Admin')
-            // }else if(res?.data.data.isStaff){
-            //     navigate('/Account')
-            }else{
+            } else {
+                Swal.fire({
+            title: "Good job!",
+            text: "User Login successfully",
+            icon: "success"
+        });
                 navigate('/Account')
             }
         }).catch((error)=>{
             setIsLoading(false)
             console.log(error)
-            alert('Incorrect Email or Password...')
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.message,
+            });
         })
-
-        const validationErrors = {}
-        if(!formData.email.trim()) {
-            validationErrors.email = "email is required"
-        } else if(!/\S+@\S+\.\S+/.test(formData.email)){
-            validationErrors.email = "email is not valid"
-        }
-
-        if(!formData.password.trim()) {
-            validationErrors.password = "password is required"
-        } else if(formData.password.length < 6){
-            validationErrors.password = "password should be at least 6 char"
-        }
-
-        if(formData.confirmPassword !== formData.password) {
-            validationErrors.confirmPassword = "password not matched"
-        }
-
-        setErrors(validationErrors)
-
-        if(Object.keys(validationErrors).length === 0) {
-            alert("Form Submitted successfully")
-        }
-
     }
     
     
@@ -95,24 +65,24 @@ const Login = () => {
                     <div className=' text-[32px] font-medium mobile:text-[24px] tablet:text-[28px]'>Sign In</div>
                     <form className='w-full' onSubmit={handleSubmit} required>
                         <div className="relative z-0 w-full mb-5 group">
-                        <input type="email"  onChange={handleChange}  name="email" id="email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#34f6f2] peer" placeholder=" " required />
-                        {errors.email && <div>{errors.email}</div>}  
-                        <label for="floating_email" className="peer-focus:font-medium absolute t ext-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email Address</label>
+                        <input type="email"  onChange={handleChange}  name="email" id="email" className={`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 ${errors?.email? 'border-red-600': 'focus:border-[#34f6f2] border-gray-300'} peer`} placeholder=" " required />
+                        {errors?.email && <div className='text-red-600'>{errors?.email}</div>}  
+                        <label className="peer-focus:font-medium absolute t ext-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email Address</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 group">
-                            <input type="password" onChange={handleChange} name="password" id="password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-[#34f6f2] peer" placeholder=" " required />
-                            <label for="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                            <input type={showPassword ? 'password' : 'text'} onChange={handleChange} name="password" id="password" className={`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 ${errors?.password? 'border-red-600': 'focus:border-[#34f6f2] border-gray-300'} peer`} placeholder=" " required />
+                            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#34f6f2] peer-focus:dark:text-[#34f6f2] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
                             {/* <div className='text-red-500' >
                             {data.error? 'Incorrect Email or Password' : null}
                             </div> */}
-                            {errors.password && <div>{errors.password}</div>}  
+                            {errors?.password && <div className='text-red-600'>{errors?.password}</div>}  
                             <div className='flex items-center justify-start gap-2 pt-2'>
-                                <input type="checkbox" />
-                                <div>Show Password</div>
+                                <input className='cursor-pointer' type="checkbox" checked={!showPassword} onChange={handleShwoPassword}/>
+                                  <label htmlFor='showPassword'>{ showPassword? "Show Password": "Hide Password"}</label>
                             </div>
                         </div>
                         
-                        <button onClick={handleSubmit} disabled={isLoading} className="rounded-3xl w-full bg-[#4291FD] hover:bg-transparent border-[2px] border-solid border-[#4291FD] hover:text-[#4291FD] duration-300 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
+                        <button disabled={isLoading} className="rounded-3xl w-full bg-[#4291FD] hover:bg-transparent border-[2px] border-solid border-[#4291FD] hover:text-[#4291FD] duration-300 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline" type="submit">
                                 {isLoading? 'Signing In...': 'Sign In'}
                             </button>
                             <Link to='/Forgotpss' ><a className="inline-block align-baseline font-bold text-sm text-[#333] hover:text-[#4291FD]" href="#">

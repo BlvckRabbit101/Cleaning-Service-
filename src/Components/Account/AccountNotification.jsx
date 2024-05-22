@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import {HiOutlineBell } from 'react-icons/hi'
 import { IoWarning } from "react-icons/io5";
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useGetSingleUserQuery } from '../../ReactRedux/UserRTK';
 
@@ -10,8 +10,7 @@ const AccountNotification = () => {
   const [change, setChange] = useState(false)
   const [jobData,setJobData] = useState()
 
-  const navigate = useNavigate()
-  const {data,isLoading, isError,isFetching} = useGetSingleUserQuery({})
+  const {data,isLoading} = useGetSingleUserQuery({})
 
   const getOrders = async () => {
     
@@ -47,7 +46,7 @@ const AccountNotification = () => {
           
           <div className='w-[90%]'>
             <Link to='/AccountVerification' className='w-[90%]'>
-           {!data?.data?.isVerified ? <div className='cursor-pointer flex py-2 h-10 w-full hover:bg-gray-100 hover:rounded-sm gap-2 justify-center items-center text-black'>
+           {data?.data?.isVerified === true ? <div className='cursor-pointer flex py-2 h-10 w-full hover:bg-gray-100 hover:rounded-sm gap-2 justify-center items-center text-black'>
                 <div><IoWarning className='text-2xl text-yellow-500 ' /></div>
                  <div>Your account is Not Verified</div> 
             </div>: null}

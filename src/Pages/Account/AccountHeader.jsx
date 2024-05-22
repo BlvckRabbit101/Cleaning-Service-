@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { loginUser } from '../../ReactRedux/Global';
 import Logo from '../../assets/images/Logo.png'
 import { Link } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
-import { CgProfile, CgBell, CgHeart, CgSearch  } from "react-icons/cg";
+import { CgProfile  } from "react-icons/cg";
 import AccountNotification from '../../Components/Account/AccountNotification';
-import Button from '../../Components/Button';
 import { FaTimes } from "react-icons/fa";
 
 const AccountHeader = () => {

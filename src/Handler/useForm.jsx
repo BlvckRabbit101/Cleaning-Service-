@@ -1,65 +1,84 @@
-import {useState} from 'react'
+import React from "react";
 
-function useForm() {
-    const [formData, setFormData] = useState({
-      email: "",
-      password: ""
-    });
-  
-    const [errors, setErrors] = useState({});
-    const [submitted, setSubmitted] = useState(false);
-  
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-  
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    };
-  
-    const validateForm = () => {
-      let isValid = true;
-      const newErrors = {};
-  
-      // Validate email
-      if (!formData.email) {
-        newErrors.email = "Email is required";
-        isValid = false;
-      }
-  
-      // Validate password
-      if (!formData.password) {
-        newErrors.password = "Password is required";
-        isValid = false;
-      }
-  
-      setErrors(newErrors);
-      return isValid;
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-  
-      if (validateForm()) {
-        // Form is valid, you can submit or process the data here
-        console.log("Form data:", formData);
-        setSubmitted(true); // Set a submitted flag
-      } else {
-        // Form is not valid, display error messages
-      }
-    };
-  
-    const isFormValid = Object.keys(errors).length === 0;
-  
-    return {
-        handleChange,
-        values,
-        error
+const omit = (key, obj) => {
+  const { [key]: _, ...rest } = obj;
+  return rest;
+};
+const useFrom = () => {
+    const [values, setValues] = React.useState({})
+    const [errors, setErrors] = React.useState({})
+
+    const validate = (name, value) => {
+        switch (name) {
+            case "userName":
+                if (value.length <= 2) {
+                    setErrors({
+                        ...errors,
+                        userName: "userName must have atleast 3 letters"
+                    })
+                } else {
+                    let newObj = omit("userName", errors)
+                    setErrors(newObj)
+                }
+            break;
+            case "phone_No":
+                if (!new RegExp(/^([0-9])/).test(value)) {
+                    setErrors({
+                        ...errors,
+                        phone_No: "phone_No must have atleast 11 numbers"
+                    })
+                }else {
+                    let newObj = omit("phone_No", errors)
+                    setErrors(newObj)
+                }
+            break;
+            case "email":
+                if (!new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(value)
+                ) {
+                    setErrors({
+                        ...errors,
+                        email: 'Enter a valid email address'
+                    })
+                }else {
+                    let newObj = omit("email", errors)
+                    setErrors(newObj)
+                }
+            break;
+            case 'password':
+                if(value.length < 6){
+                    setErrors({
+                        ...errors,
+                        password:'Password should contains atleast 6 charaterss'
+                    })
+                }else {
+                    let newObj = omit("password", errors)
+                    setErrors(newObj)
+                }
+            break
+            default:
+                break;
+        }
     }
 
+    const handleChange = (event) => {
+        event.persist()
+        let name = event.target.name
+        let val = event.target.value
+
+        validate(name,val);
+        
+        setValues({
+            ...values,
+            [name]: val
+        })
+    }
+    
+
+    return {
+        values,
+        errors,
+        handleChange,
+    }
 }
 
-
-
-export default useForm
+export default useFrom
